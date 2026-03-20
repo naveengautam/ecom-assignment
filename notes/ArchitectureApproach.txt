@@ -1,0 +1,11 @@
+This App uses a pragmatic layered Laravel structure focused on keeping business logic out of controllers and making side effects async.
+
+Controller thin, Service heavy: controllers mainly orchestrate request/response, while checkout/cart business rules live in app/Services (OrderService, CartService).
+
+Domain events for side effects: order/payment lifecycle actions trigger events, and listeners handle non-core concerns (logging now, extensible later for mail/notifications/audit).
+
+Queue-backed listeners: I just implemented the concept of listeners where we can do much more in the background.
+
+Model relationships for query clarity: Order, OrderItem, Payment, CartItem relations are used for readable Eloquent flows.
+
+Transaction around checkout: OrderService wraps multi-step checkout in DB transaction for consistency (orders/items/payment/stock/cart cleanup).
