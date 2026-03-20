@@ -11,20 +11,36 @@
 ### How to Configure This Project
 
 1. Configure the database settings in the `.env` file.
-2. Install all required packages:
+   ```
+   cp .env.example .env
+   ```
+
+2. Generate the key
+   ```
+   php artisan key:generate
+   ```
+
+3. Install all required packages:
    ```
    composer install
    ```
-3. Run the database migrations:
+4. Run the database migrations:
    ```
    php artisan migrate
    ```
-4. Seed the Users, Vendors, and Products tables:
+5. Seed the Users, Vendors, and Products tables:
    ```
    php artisan db:seed
    ```
-
-5. The application provides the following users for login:
+6. I have used Auth toolkit for authentication so we also need to install and build npm packages:
+   ```
+   npm install
+   ```
+7. We can build it so we don't need to run it again:
+   ```
+   npm run build
+   ```
+8. The application provides the following users for login:
 
    **Customer:**
    - Email: `ajay@example.com`
@@ -34,7 +50,7 @@
    - Email: `admin@example.com`
    - Password: `password`
 
-6. Events and Listeners for OrderCreation:
+9. Events and Listeners for OrderCreation:
    - To process queued listeners, run:
    ```
    php artisan queue:work
