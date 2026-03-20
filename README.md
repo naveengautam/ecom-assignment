@@ -40,7 +40,14 @@
    ```
    npm run build
    ```
-8. The application provides the following users for login:
+
+8. Now you're good to run the server:
+   ```
+   php artisan serve
+   ```
+   It would run on http://127.0.0.1:8000/
+
+9. The application provides the following users for login:
 
    **Customer:**
    - Email: `ajay@example.com`
@@ -50,7 +57,7 @@
    - Email: `admin@example.com`
    - Password: `password`
 
-9. Events and Listeners for OrderCreation:
+10. Events and Listeners for OrderCreation:
    - To process queued listeners, run:
    ```
    php artisan queue:work
