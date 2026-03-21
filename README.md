@@ -70,3 +70,13 @@
 
 1. Vendor login is not available because a vendor was not created in the users table.
 2. I haven't written any Unit Tests or followed TDD approach because of time constraint.
+
+
+### Bonus Task
+1. Added a scheduled Command to cancel all unpaid records from Payment table.
+
+   ```
+   php artisan app:cancel-unpaid-orders
+   ```
+### Additional Notes
+1. I have used middleware to check the permission whereas I have created OrderPolicy file which can be also used to check Authorization in the Controller.
